@@ -38,13 +38,11 @@ fn get_options() -> Result<CuckooConfig, String> {
     let yaml = load_yaml!("./cli.yml");
     let matches = clap::App::from_yaml(yaml).get_matches();
 
-    let listening_port: u16 =
-        matches.value_of("listening port").unwrap().parse().map_err(|_| "Invalid listening port")?;
-    let submitting_port: u16 =
-        matches.value_of("submitting port").unwrap().parse().map_err(|_| "Invalid submitting port")?;
-    let max_vertex = matches.value_of("max vertex").unwrap().parse().map_err(|_| "Invalid max vertex")?;
-    let max_edge = matches.value_of("max edge").unwrap().parse().map_err(|_| "Invalid max edge")?;
-    let cycle_length = matches.value_of("cycle length").unwrap().parse().map_err(|_| "Invalid cycle length")?;
+    let listening_port = value_t!(matches, "listening port", u16).map_err(|_| "Invalid listening port")?;
+    let submitting_port = value_t!(matches, "submitting port", u16).map_err(|_| "Invalid submitting port")?;
+    let max_vertex = value_t!(matches, "max vertex", usize).map_err(|_| "Invalid max vertex")?;
+    let max_edge = value_t!(matches, "max edge", usize).map_err(|_| "Invalid max edge")?;
+    let cycle_length = value_t!(matches, "cycle length", usize).map_err(|_| "Invalid cycle length")?;
 
     Ok(CuckooConfig {
         max_vertex,
