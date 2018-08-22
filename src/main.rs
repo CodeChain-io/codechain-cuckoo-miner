@@ -15,6 +15,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 extern crate byteorder;
+#[macro_use]
 extern crate clap;
 extern crate codechain_miner;
 extern crate crypto;
@@ -29,21 +30,13 @@ extern crate rustc_hex;
 mod config;
 mod worker;
 
-use clap::{App, Arg};
 use codechain_miner::run;
 
 use self::config::CuckooConfig;
 
 fn get_options() -> Result<CuckooConfig, String> {
-    let matches = App::new("codechain-cuckoo-miner")
-        .args(&[
-            Arg::with_name("max vertex").short("n").takes_value(true).required(true),
-            Arg::with_name("max edge").short("m").takes_value(true).required(true),
-            Arg::with_name("cycle length").short("l").takes_value(true).required(true),
-            Arg::with_name("listening port").short("p").global(true).takes_value(true).default_value("3333"),
-            Arg::with_name("submitting port").short("s").global(true).takes_value(true).default_value("8080"),
-        ])
-        .get_matches();
+    let yaml = load_yaml!("./cli.yml");
+    let matches = clap::App::from_yaml(yaml).get_matches();
 
     let listening_port: u16 =
         matches.value_of("listening port").unwrap().parse().map_err(|_| "Invalid listening port")?;

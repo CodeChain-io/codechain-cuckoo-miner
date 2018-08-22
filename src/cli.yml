@@ -1,0 +1,26 @@
+name: codechain-cuckoo-miner
+version: "0.1.0"
+version_short: "v"
+author: CodeChain Team <codechain@kodebox.io>
+about: CodeChian Cuckoo Miner
+args:
+  - listening port:
+      short: p
+      takes_value: true
+      default_value: "3333"
+  - submitting port:
+      short: s
+      takes_value: true
+      default_value: "8080"
+  - max vertex:
+      short: n
+      takes_value: true
+      required: true
+  - max edge:
+      short: m
+      takes_value: true
+      required: true
+  - cycle length:
+      short: l
+      takes_value: true
+      required: true

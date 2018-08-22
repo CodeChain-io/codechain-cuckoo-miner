@@ -6,7 +6,7 @@ authors = ["CodeChain Team <codechain@kodebox.io>"]
 
 [dependencies]
 byteorder = "1.2"
-clap = "2.32"
+clap = { version = "2", features = ["yaml"] }
 codechain-miner = { git = "https://github.com/CodeChain-io/codechain-miner.git", rev = "4f498a4a" }
 cuckoo = { git = "https://github.com/CodeChain-io/rust-cuckoo.git", rev = "280cab9c" }
 ethereum-types = "0.3.2"
