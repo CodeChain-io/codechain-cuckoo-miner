@@ -1,4 +1,4 @@
-# CodeChain Cuckoo Miner
+# CodeChain Cuckoo Miner [![Build Status](https://travis-ci.org/CodeChain-io/codechain-cuckoo-miner.svg?branch=master)](https://travis-ci.org/CodeChain-io/codechain-cuckoo-miner)
 Mining worker for Cuckoo algorithms in [CodeChain](https://github.com/CodeChain-io/codechain).
 
 ## Build
