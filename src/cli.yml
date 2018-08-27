@@ -6,21 +6,26 @@ about: CodeChian Cuckoo Miner
 args:
   - listening port:
       short: p
+      long: port
       takes_value: true
       default_value: "3333"
   - submitting port:
       short: s
+      long: submit
       takes_value: true
       default_value: "8080"
   - max vertex:
       short: n
+      long: max-vertex
       takes_value: true
       required: true
   - max edge:
       short: m
+      long: max-edge
       takes_value: true
       required: true
   - cycle length:
       short: l
+      long: length
       takes_value: true
       required: true
