@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-use codechain_miner::{Config, Worker};
+use codechain_miner::{Config, HttpConfig, RpcConfig, Worker};
 
 use super::worker::CuckooWorker;
 
@@ -26,15 +26,20 @@ pub struct CuckooConfig {
 
     pub listening_port: u16,
     pub submitting_port: u16,
+
+    pub concurrent_jobs: u16,
 }
 
 impl Config for CuckooConfig {
-    fn listening_port(&self) -> u16 {
-        self.listening_port
+    fn rpc_config(&self) -> RpcConfig {
+        RpcConfig::Http(HttpConfig {
+            listen_port: self.listening_port,
+            submitting_port: self.submitting_port,
+        })
     }
 
-    fn submitting_port(&self) -> u16 {
-        self.submitting_port
+    fn jobs(&self) -> usize {
+        self.concurrent_jobs as usize
     }
 
     fn worker(&self) -> Box<Worker> {

@@ -19,9 +19,9 @@ codechain-cuckoo-miner [OPTIONS]
 ```
 
 ### Usage Examples
-* N=16, M=8, L=6, **listening to port **3333**, submitting to port **8080** :
+* N=16, M=8, L=6, listening on port **3333**, submitting on port **8080**, **1** concurrent jobs :
 ```
-codechain-cuckoo-miner -n 16 -m 8 -l 6
+codechain-cuckoo-miner -n 16 -m 8 -l 6 -p 3333 -s 8080 -j 1
 ```
 
 ## Configuration
@@ -32,6 +32,7 @@ codechain-cuckoo-miner -n 16 -m 8 -l 6
 | :----: | ------------------------------ |:-------------:|:--------:|
 | `-p`   | Port number to receive job     | 3333 | No |
 | `-s`   | Port number to submit solution | 8080 | No |
+| `-j`   | The number of concurrent jobs  |    1 | No |
 
 | Option | Description                    | Default | Required |
 | :----: | ------------------------------ |:-------------:|:--------:|

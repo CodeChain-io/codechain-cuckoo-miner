@@ -29,3 +29,8 @@ args:
       long: length
       takes_value: true
       required: true
+  - concurrent jobs:
+      short: j
+      long: jobs
+      takes_value: true
+      default_value: "1"
