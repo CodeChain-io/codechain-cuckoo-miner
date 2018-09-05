@@ -43,6 +43,7 @@ fn get_options() -> Result<CuckooConfig, String> {
     let max_vertex = value_t!(matches, "max vertex", usize).map_err(|_| "Invalid max vertex")?;
     let max_edge = value_t!(matches, "max edge", usize).map_err(|_| "Invalid max edge")?;
     let cycle_length = value_t!(matches, "cycle length", usize).map_err(|_| "Invalid cycle length")?;
+    let concurrent_jobs = value_t!(matches, "concurrent jobs", u16).map_err(|_| "Invalid concurrent jobs")?;
 
     Ok(CuckooConfig {
         max_vertex,
@@ -50,6 +51,7 @@ fn get_options() -> Result<CuckooConfig, String> {
         cycle_length,
         listening_port,
         submitting_port,
+        concurrent_jobs,
     })
 }
 
