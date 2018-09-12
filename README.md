@@ -15,13 +15,23 @@ The resulting binary file can be found at `target/release/codechain-cuckoo-miner
 ## Usage
 
 ```
-codechain-cuckoo-miner [OPTIONS]
+codechain-cuckoo-miner [OPTIONS] [SUBCOMMAND]
 ```
 
 ### Usage Examples
-* N=0x10, M=0x8, L=6, listening on port **3333**, submitting on port **8080**, **1** concurrent jobs :
+
+* N=0x10, M=0x8, L=6, **1** concurrent jobs :
+
+Using HTTP (listening on port **3333**, submitting on port **8080**)
 ```
-codechain-cuckoo-miner -n 0x10 -m 0x8 -l 6 -p 3333 -s 8080 -j 1
+codechain-cuckoo-miner -n 0x10 -m 0x8 -l 6 -j 1 http -p 3333 -s 8080
+```
+
+or
+
+Using Stratum
+```
+codechain-cuckoo-miner -n 0x10 -m 0x8 -l 6 -j 1 stratum
 ```
 
 ## Configuration
@@ -30,12 +40,24 @@ codechain-cuckoo-miner -n 0x10 -m 0x8 -l 6 -p 3333 -s 8080 -j 1
 
 | Option | Description                    | Default | Required |
 | :----: | ------------------------------ |:-------------:|:--------:|
-| `-p`   | Port number to receive job     | 3333 | No |
-| `-s`   | Port number to submit solution | 8080 | No |
-| `-j`   | The number of concurrent jobs  |    1 | No |
+| `-n`   | Number of vertices in graph    | None | Yes |
+| `-m`   | Number of edges in graph       | None | Yes |
+| `-l`   | Length of cycle to detect      | None | Yes |
+| `-j`   | Number of concurrent jobs      |    1 | No |
+
+### RPC Subcommands
+
+* HTTP
 
 | Option | Description                    | Default | Required |
 | :----: | ------------------------------ |:-------------:|:--------:|
-| `-n`   | Number of vertices in graph | None | Yes |
-| `-m`   | Number of edges in graph    | None | Yes |
-| `-l`   | Length of cycle to detect   | None | Yes |
+| `-p` 	 | Port number to receive job 	  | 3333 | No |
+| `-s`   | Port number to submit solution | 8008 | No |
+
+* Stratum
+
+| Option | Description                    | Default | Required |
+| :----: | ------------------------------ |:-------------:|:--------:|
+| `-p`   | Port number to stratum server  | 3333 | No |
+| `-i`   | Miner name                     |      | No |
+| `-w`   | Miner password                 |      | No |

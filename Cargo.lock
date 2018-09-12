@@ -77,7 +77,7 @@ version = "0.1.0"
 dependencies = [
  "byteorder 1.2.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "clap 2.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "codechain-miner 0.1.0 (git+https://github.com/CodeChain-io/codechain-miner.git?rev=96e200d)",
+ "codechain-miner 0.1.0 (git+https://github.com/CodeChain-io/codechain-miner.git?rev=820e11e)",
  "cuckoo 0.1.0 (git+https://github.com/CodeChain-io/rust-cuckoo.git?rev=280cab9c)",
  "env_logger 0.5.12 (registry+https://github.com/rust-lang/crates.io-index)",
  "ethereum-types 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -90,7 +90,7 @@ dependencies = [
 [[package]]
 name = "codechain-miner"
 version = "0.1.0"
-source = "git+https://github.com/CodeChain-io/codechain-miner.git?rev=96e200d#96e200d74a8386a720eae867bf4be37ba72093cf"
+source = "git+https://github.com/CodeChain-io/codechain-miner.git?rev=820e11e#820e11e526d4fc49911eac7864152c21bdf8b6de"
 dependencies = [
  "bytes 0.4.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "ethereum-types 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -919,7 +919,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum bytes 0.4.9 (registry+https://github.com/rust-lang/crates.io-index)" = "e178b8e0e239e844b083d5a0d4a156b2654e67f9f80144d48398fcd736a24fb8"
 "checksum cfg-if 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "0c4e7bb64a8ebb0d856483e1e682ea3422f883c5f5615a90d51a2c82fe87fdd3"
 "checksum clap 2.32.0 (registry+https://github.com/rust-lang/crates.io-index)" = "b957d88f4b6a63b9d70d5f454ac8011819c6efa7727858f458ab71c756ce2d3e"
-"checksum codechain-miner 0.1.0 (git+https://github.com/CodeChain-io/codechain-miner.git?rev=96e200d)" = "<none>"
+"checksum codechain-miner 0.1.0 (git+https://github.com/CodeChain-io/codechain-miner.git?rev=820e11e)" = "<none>"
 "checksum crossbeam-deque 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = "fe8153ef04a7594ded05b427ffad46ddeaf22e63fd48d42b3e1e3bb4db07cae7"
 "checksum crossbeam-epoch 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)" = "2af0e75710d6181e234c8ecc79f14a97907850a541b13b0be1dd10992f2e4620"
 "checksum crossbeam-utils 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "d636a8b3bcc1b409d7ffd3facef8f21dcb4009626adbd0c5e6c4305c07253c7b"
