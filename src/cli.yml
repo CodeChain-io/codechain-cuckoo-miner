@@ -4,16 +4,6 @@ version_short: "v"
 author: CodeChain Team <codechain@kodebox.io>
 about: CodeChian Cuckoo Miner
 args:
-  - listening port:
-      short: p
-      long: port
-      takes_value: true
-      default_value: "3333"
-  - submitting port:
-      short: s
-      long: submit
-      takes_value: true
-      default_value: "8080"
   - max vertex:
       short: n
       long: max-vertex
@@ -34,3 +24,36 @@ args:
       long: jobs
       takes_value: true
       default_value: "1"
+
+subcommands:
+    - http:
+        about: HTTP RPC for Miner
+        args:
+          - listening port:
+              short: p
+              long: port
+              takes_value: true
+              default_value: "3333"
+          - submitting port:
+              short: s
+              long: submit
+              takes_value: true
+              default_value: "8080"
+    - stratum:
+        about: Stratum RPC for Miner
+        args:
+          - server port:
+              short: p
+              long: port
+              takes_value: true
+              default_value: "8008"
+          - miner name:
+              short: i
+              long: name
+              takes_value: true
+              default_value: ""
+          - miner pwd:
+              short: w
+              long: pwd
+              takes_value: true
+              default_value: ""
