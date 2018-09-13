@@ -52,12 +52,12 @@ codechain-cuckoo-miner -n 0x10 -m 0x8 -l 6 -j 1 stratum
 | Option | Description                    | Default | Required |
 | :----: | ------------------------------ |:-------------:|:--------:|
 | `-p` 	 | Port number to receive job 	  | 3333 | No |
-| `-s`   | Port number to submit solution | 8008 | No |
+| `-s`   | Port number to submit solution | 8080 | No |
 
 * Stratum
 
 | Option | Description                    | Default | Required |
 | :----: | ------------------------------ |:-------------:|:--------:|
-| `-p`   | Port number to stratum server  | 3333 | No |
+| `-p`   | Port number to stratum server  | 8008 | No |
 | `-i`   | Miner name                     |      | No |
 | `-w`   | Miner password                 |      | No |
