@@ -73,7 +73,7 @@ fn get_options() -> Result<CuckooConfig, String> {
             pwd: miner_pwd,
         })
     } else {
-        return Err(format!("Invalid RPC Config"))
+        return Err("Invalid RPC Config".to_string())
     };
 
     Ok(CuckooConfig {

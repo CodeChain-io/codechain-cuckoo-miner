@@ -36,7 +36,7 @@ impl Config for CuckooConfig {
         self.concurrent_jobs as usize
     }
 
-    fn worker(&self) -> Box<Worker> {
+    fn worker(&self) -> Box<dyn Worker> {
         Box::new(CuckooWorker::new(self.clone()))
     }
 }
